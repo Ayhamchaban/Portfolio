@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayham — Visual Designer &amp; Photographer, Dubai</title>
+  <meta name="description" content="Ayham is a Dubai-based visual designer and photographer working across identity &amp; print, packaging, social media, motion and photography." />
+
+  <!-- Fonts: Fraunces (serif display), Inter (sans body), JetBrains Mono (metadata/tags) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- =========================================================
+       NAV
+       ========================================================= -->
+
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo" aria-label="Ayham — home">
+        <!--
+          LOGO PLACEHOLDER
+          -----------------
+          This is a text/monogram placeholder standing in for a real logo.
+          To swap it for a real logo file:
+            1. Put your logo image in assets/logo/ (e.g. assets/logo/logo.svg)
+            2. Replace the <span class="logo-mark">...</span> block below with:
+               <img src="assets/logo/logo.svg" alt="Ayham logo" class="logo-mark-img" />
+            3. You can delete the .logo-mark CSS rules in css/styles.css if unused.
+        -->
+        <span class="logo-mark" aria-hidden="true">A/H</span>
+        <span class="nav-logo-text">Ayham</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Visual Designer &amp; Photographer</p>
+        <h1 class="hero-name">Ayham</h1>
+        <p class="hero-tagline">Identity, packaging and imagery for brands that want to be looked at twice.</p>
+        <p class="hero-intro">Based in Dubai, working with studios and founders across the region.</p>
+        <p class="hero-location">
+          <span class="dot" aria-hidden="true"></span> Dubai, UAE
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FILMSTRIP DIVIDER — signature motif, used once, ties
+         photography + motion together.
+         ========================================================= -->
+    <div class="filmstrip" role="presentation" aria-hidden="true">
+      <div class="filmstrip-track">
+        <div class="filmstrip-holes filmstrip-holes-top"></div>
+        <div class="filmstrip-frames"></div>
+        <div class="filmstrip-holes filmstrip-holes-bottom"></div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         ABOUT
+         ========================================================= -->
+    <section class="about" id="about">
+      <div class="section-inner about-inner">
+        <h2 class="section-title">About</h2>
+
+        <!--
+          BIO PLACEHOLDER — REPLACE ME
+          -----------------------------
+          Swap the paragraph below for Ayham's real bio.
+        -->
+        <p class="about-bio">
+          <!-- REPLACE ME: real bio copy -->
+          Ayham is a visual designer and photographer based in Dubai, working at the
+          intersection of brand identity and imagery. The studio partners with founders,
+          agencies and small teams to build visual systems that hold up across print,
+          packaging, screens and campaigns — then documents the work with the same care
+          behind the camera. Placeholder bio copy — replace with the real story.
+        </p>
+
+        <h3 class="about-subtitle">Areas of focus</h3>
+        <ul class="specialty-list">
+          <li>
+            <span class="specialty-index">01</span>
+            <span class="specialty-name">Identity &amp; Print</span>
+            <span class="specialty-desc">Logos, brand systems, editorial and print collateral.</span>
+          </li>
+          <li>
+            <span class="specialty-index">02</span>
+            <span class="specialty-name">Packaging</span>
+            <span class="specialty-desc">Structural and surface design for physical products.</span>
+          </li>
+          <li>
+            <span class="specialty-index">03</span>
+            <span class="specialty-name">Social Media</span>
+            <span class="specialty-desc">Content systems and campaign assets for social platforms.</span>
+          </li>
+          <li>
+            <span class="specialty-index">04</span>
+            <span class="specialty-name">Motion / Video</span>
+            <span class="specialty-desc">Short-form edits, reels and motion graphics.</span>
+          </li>
+          <li>
+            <span class="specialty-index">05</span>
+            <span class="specialty-name">Photography</span>
+            <span class="specialty-desc">Product, portrait and campaign photography.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         WORK — project grid, rendered from js/projects.js
+         ========================================================= -->
+    <section class="work" id="work">
+      <div class="section-inner">
+        <h2 class="section-title section-title-light">Work</h2>
+
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter projects by category">
+          <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="identity">Identity &amp; Print</button>
+          <button type="button" class="filter-btn" data-filter="packaging">Packaging</button>
+          <button type="button" class="filter-btn" data-filter="social">Social Media</button>
+          <button type="button" class="filter-btn" data-filter="motion">Motion / Video</button>
+          <button type="button" class="filter-btn" data-filter="photo">Photography</button>
+        </div>
+
+        <!-- Cards are generated by js/main.js from js/projects.js. Do not hand-edit. -->
+        <div class="project-grid" id="project-grid" aria-live="polite">
+          <p class="project-grid-empty" id="project-grid-empty" hidden>No projects in this category yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CLIENTS
+         ========================================================= -->
+    <section class="clients">
+      <div class="section-inner">
+        <h2 class="clients-title">Selected clients</h2>
+        <!--
+          CLIENT PLACEHOLDERS
+          --------------------
+          Swap each <span class="client-name"> for an <img src="assets/clients/name.svg">
+          once real client logos are available.
+        -->
+        <ul class="client-strip">
+          <li class="client-item"><span class="client-name">Client One</span></li>
+          <li class="client-item"><span class="client-name">Studio Nine</span></li>
+          <li class="client-item"><span class="client-name">Client Three</span></li>
+          <li class="client-item"><span class="client-name">Northline</span></li>
+          <li class="client-item"><span class="client-name">Client Five</span></li>
+          <li class="client-item"><span class="client-name">Marram &amp; Co.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CONTACT
+         ========================================================= -->
+    <section class="contact" id="contact">
+      <div class="section-inner contact-inner">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-lead">Available for new projects and collaborations in Dubai and beyond.</p>
+
+        <!--
+          CONTACT PLACEHOLDERS — REPLACE ME
+          -----------------------------------
+          Update the href and visible text for each link below with real details.
+        -->
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <!-- REPLACE ME: real email address -->
+            <a href="mailto:hello@ayhamdesign.com">hello@ayhamdesign.com</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <!-- REPLACE ME: real LinkedIn URL -->
+            <a href="https://www.linkedin.com/in/ayham" target="_blank" rel="noopener">linkedin.com/in/ayham</a>
+          </li>
+          <li>
+            <span class="contact-label">Instagram</span>
+            <!-- REPLACE ME: real Instagram URL -->
+            <a href="https://www.instagram.com/ayham.studio" target="_blank" rel="noopener">@ayham.studio</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="section-inner footer-inner">
+      <span>© <span id="year"></span> Ayham. All rights reserved.</span>
+      <span class="footer-location">Dubai, UAE</span>
+    </div>
+  </footer>
+
+  <!-- Project data lives here, separate from markup -->
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

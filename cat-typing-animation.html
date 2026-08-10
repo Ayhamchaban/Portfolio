@@ -105,7 +105,7 @@
   /* Tail sways independently of the hop for extra character */
   #cat-tail {
     animation: tail-sway 1.6s ease-in-out infinite;
-    transform-origin: 165px 150px; /* base of the tail, where it meets the body */
+    transform-origin: 160px 148px; /* base of the tail, where it meets the body */
   }
 
   @keyframes tail-sway {
@@ -138,33 +138,54 @@
 
   <div class="cat-stage">
     <!--
-      Original geometric line-art cat, built from simple flat shapes only
-      (rounded body, two triangular ears, oval head, tail path).
-      No reference to any existing brand/logo.
+      Original geometric "low-poly" line-art cat, built from simple flat
+      polygons only (faceted body/head, angular ears, segmented antenna-
+      style tail with joint nodes, square LED eyes). No reference to any
+      existing brand/logo.
     -->
     <svg id="cat" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
       <g id="cat-body-group" fill="#B8902F">
-        <!-- tail: drawn first so it sits behind the body -->
-        <path id="cat-tail"
-              d="M 165 150 C 195 145, 200 110, 178 92 C 196 105, 194 148, 163 158 Z" />
 
-        <!-- body -->
-        <ellipse cx="100" cy="150" rx="55" ry="38" />
+        <!-- tail: drawn first so it sits behind the body. Segmented,
+             robot-antenna style — straight links with small joint nodes
+             instead of one smooth curve. -->
+        <g id="cat-tail">
+          <polyline points="160,148 192,138 210,108 196,86"
+                     fill="none" stroke="#B8902F" stroke-width="9"
+                     stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="192" cy="138" r="5" fill="#14120F" stroke="#B8902F" stroke-width="2.5" />
+          <circle cx="210" cy="108" r="5" fill="#14120F" stroke="#B8902F" stroke-width="2.5" />
+          <circle cx="196" cy="86" r="5" fill="#B8902F" />
+        </g>
 
-        <!-- head -->
-        <circle cx="55" cy="112" r="34" />
+        <!-- body: low-poly hexagon -->
+        <polygon points="48,152 66,126 148,122 162,152 142,180 66,182" />
+        <!-- facet lines, radiating from a central point for a faceted/3D-render look -->
+        <g stroke="#14120F" stroke-width="1.5" opacity="0.5">
+          <line x1="66" y1="126" x2="105" y2="152" />
+          <line x1="148" y1="122" x2="105" y2="152" />
+          <line x1="66" y1="182" x2="105" y2="152" />
+          <line x1="142" y1="180" x2="105" y2="152" />
+        </g>
 
-        <!-- ears (simple triangles) -->
-        <path d="M 30 95 L 22 60 L 50 84 Z" />
-        <path d="M 78 95 L 90 58 L 58 82 Z" />
+        <!-- head: low-poly hexagon -->
+        <polygon points="55,80 85,96 83,130 55,144 27,130 25,96" />
+        <g stroke="#14120F" stroke-width="1.5" opacity="0.5">
+          <line x1="55" y1="80" x2="55" y2="144" />
+          <line x1="25" y1="96" x2="83" y2="130" />
+        </g>
 
-        <!-- front legs, small rounded stubs -->
-        <rect x="70" y="178" width="14" height="22" rx="6" />
-        <rect x="98" y="180" width="14" height="24" rx="6" />
+        <!-- ears: sharp angular triangles -->
+        <polygon points="32,90 20,50 54,82" />
+        <polygon points="80,90 94,48 60,80" />
 
-        <!-- simple face: two dot eyes cut out in background color -->
-        <circle cx="45" cy="108" r="3.5" fill="#14120F" />
-        <circle cx="65" cy="108" r="3.5" fill="#14120F" />
+        <!-- front legs: blocky rectangles (no rounding, for a more built/mechanical look) -->
+        <rect x="68" y="176" width="14" height="24" />
+        <rect x="98" y="178" width="14" height="26" />
+
+        <!-- face: small square "LED" eyes instead of round dots -->
+        <rect x="42" y="104" width="6" height="6" fill="#14120F" />
+        <rect x="63" y="104" width="6" height="6" fill="#14120F" />
       </g>
     </svg>
   </div>

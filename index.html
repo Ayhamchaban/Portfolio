@@ -78,6 +78,37 @@
     </div>
 
     <!-- =========================================================
+         CAT MASCOT — small looping walk animation, purely
+         decorative breather between hero and About. Pure inline
+         SVG + CSS animation (see css/styles.css for keyframes).
+         Freezes to a static standing pose for prefers-reduced-motion.
+         ========================================================= -->
+    <div class="cat-mascot" aria-hidden="true">
+      <div class="cat-track">
+        <div class="cat-walker">
+          <div class="cat-bob">
+            <svg class="cat-svg" viewBox="0 0 64 44" focusable="false">
+              <g class="cat-tail-group">
+                <path class="cat-tail" d="M14,26 C5,22 2,10 9,4" />
+              </g>
+              <g class="cat-body">
+                <ellipse cx="32" cy="28" rx="17" ry="10" />
+                <ellipse cx="21" cy="34" rx="4" ry="3" />
+                <ellipse cx="42" cy="34" rx="4" ry="3" />
+                <circle cx="47" cy="18" r="8" />
+              </g>
+              <g class="cat-ears">
+                <path d="M41,12 L44,3 L47,11 Z" />
+                <path d="M48,11 L52,3 L54,12 Z" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="cat-ground"></div>
+      </div>
+    </div>
+
+    <!-- =========================================================
          ABOUT
          ========================================================= -->
     <section class="about" id="about">
